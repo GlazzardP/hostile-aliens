@@ -71,7 +71,8 @@ const displayShips = () => {
 })}
 
 const shootAlien = () => {
-    const randomShip = Math.floor(Math.random() * ships.length);
+    const randomShip = Math.floor(Math.random() * ships.length)
+    // if (randomShip.health < 1){}
     ships[randomShip].takesHit();
     displayShips();    
     // console.log(ships[randomShip].health);
