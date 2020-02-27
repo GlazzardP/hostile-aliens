@@ -1,8 +1,9 @@
 div { 
     display: flex;
     justify-content: center;
+    border: green solid 3px;
 }
-
+    
 p {
     border: solid greenyellow 3px;
     margin: 20px;

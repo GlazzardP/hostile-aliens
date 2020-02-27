@@ -16,13 +16,19 @@ class ship {
 }
 
 class motherShip extends ship{
+    
     kamikaze() { 
-     document.getElementById()   
+     const allDivs = document.querySelectorAll("div");
+     console.log(allDivs);
+     allDivs.forEach((div) => {
+        div.style.display = "none";
+     }) 
+     //.style.display = "none";  
     }
 
 }
 
-const ship1 = new ship(100, 9, "ship1");
+const ship1 = new motherShip(5, 9, "ship1");
 const ship2 = new ship(80, 10, "ship2");
 const ship3 = new ship(80, 10, "ship3");
 const ship4 = new ship(80, 10, "ship4");
@@ -56,6 +62,9 @@ const shootAlien = () => {
     ships[randomShip].takesHit();
     if (ships[randomShip].health < 1){
         ships[randomShip].dead();
+    }
+    if (ships[0].health < 1) { 
+        ships[0].kamikaze();
     }
     displayShips();    
     // console.log(ships[randomShip].health);
