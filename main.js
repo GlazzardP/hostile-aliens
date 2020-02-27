@@ -72,7 +72,7 @@ const displayShips = () => {
 
 const shootAlien = () => {
     const randomShip = Math.floor(Math.random() * ships.length)
-    // if (randomShip.health < 1){}
+    if (randomShip.health < 1){"delete element and find new element to attack"}
     ships[randomShip].takesHit();
     displayShips();    
     // console.log(ships[randomShip].health);
