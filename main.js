@@ -2,44 +2,25 @@ class ship {
     constructor(health, shotImpact, name){
     
     this.health = health;
-    this.isAlive = true;
     this.shotImpact = shotImpact;
     this.name = name;
     }
-
-    // died() { 
-    // this.isAlive - false;
-    // }
-
-    // showLifePoints() { 
-    // return `${this.health}`
-    // }
 
     takesHit() { 
     this.health = this.health - this.shotImpact;
     }
 
-    dies() { 
-        const life = getElementById(ship);
-        if (life.health > 0){
-            style.display = 
-        }
-    }
+    dead() { 
+    document.getElementById(this.name).style.display = "none";
+}
 }
 
-// class motherShip extends ship{
+class motherShip extends ship{
+    kamikaze() { 
+     document.getElementById()   
+    }
 
-//     takesHit() { 
-//         this.health = this.health - 9;
-//         console.log(this.health)
-//     }
-// }
-
-// class defenceShip extends ship { 
-//     takesShot () { 
-//         this.health = this.health - 10;
-//     }
-// }
+}
 
 const ship1 = new ship(100, 9, "ship1");
 const ship2 = new ship(80, 10, "ship2");
@@ -67,14 +48,24 @@ const displayShips = () => {
     ships.forEach(ship => {
     // console.log(ship);
     const id = ship.name;
-    document.getElementById(id).innerHTML = `${ship.health} : ${ship.name}` 
+    document.getElementById(id).innerHTML = `${ship.name}: ${ship.health}` 
 })}
 
 const shootAlien = () => {
     const randomShip = Math.floor(Math.random() * ships.length)
-    if (randomShip.health < 1){"delete element and find new element to attack"}
     ships[randomShip].takesHit();
+    if (ships[randomShip].health < 1){
+        ships[randomShip].dead();
+    }
     displayShips();    
     // console.log(ships[randomShip].health);
     // document.getElementById(id).innerHTML = `${ships.health}`;
 }
+
+
+// const filterAliveShips = (input) => { 
+//     if(this.health >= 1){
+//         return true;
+//     } else
+//     return false;
+// }

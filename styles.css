@@ -7,6 +7,6 @@ p {
     border: solid greenyellow 3px;
     margin: 20px;
     padding: 10px;
-    background-color: green;
+    /* background-color: green; */
     width: 80px;
 }
