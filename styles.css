@@ -1,13 +1,37 @@
 div { 
     display: flex;
     justify-content: center;
-    border: green solid 3px;
 }
     
 p {
-    border: solid greenyellow 3px;
-    margin: 20px;
+    border-radius: 45%;
+    margin: 0 20px;
     padding: 10px;
-    /* background-color: green; */
-    width: 80px;
+}
+
+body {
+    background-image: url(./katie-hong--9uey7asjS0-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+section { 
+    width: 200px;
+    margin: 100px auto;   
+}
+
+button { 
+    height: 50px;
+    width: 100px;
+}
+form { 
+    padding: 30px;
+}
+
+.flying { 
+    height: 50px;
+}
+
+#mother { 
+    width: 100px;
 }
