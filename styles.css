@@ -4,7 +4,7 @@ div {
 }
     
 p {
-    border-radius: 45%;
+    /* border-radius: 45%; */
     margin: 0 20px;
     padding: 10px;
 }
@@ -16,16 +16,15 @@ body {
 }
 
 section { 
+    text-align: center;
     width: 200px;
-    margin: 100px auto;   
+    margin: 100px auto; 
+    /* border: red solid 5px;   */
 }
 
 button { 
-    height: 50px;
-    width: 100px;
-}
-form { 
-    padding: 30px;
+    margin: 30px;
+    border: solid rgb(88, 86, 85) 2px;
 }
 
 .flying { 
