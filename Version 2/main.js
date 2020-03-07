@@ -1,11 +1,12 @@
-const numMotherShips = 1;
-const numAttackShips = 5;
-const numDefenseShips = 8;
+const numMotherShips = document.getElementById("motherShipInput");
+const numAttackShips = document.getElementById("attackShipInput");
+const numDefenseShips = document.getElementById("defenceShipInput");
 
 const totalShips = numAttackShips + numDefenseShips + numMotherShips;
 const ships = [];
 
-const shipsElement = document.getElementById("ships");
+const shipsSection = document.getElementById("ships");
+
 class Ship {
   constructor(name, hp, damgePoints) {
     this.name = name;
@@ -31,9 +32,9 @@ for (let index = 0; index < totalShips; index++) {
   ships.push(newShip);
 }
 const updateHtml = () => {
-  shipsElement.innerHTML = "";
+  shipsSection.innerHTML = "";
   ships.forEach(ship => {
-    shipsElement.innerHTML += `<p>${ship.name}: ${ship.hp}</p>`;
+    shipsSection.innerHTML += `<p>${ship.name}: ${ship.hp}</p>`;
   });
 };
 const endGame = () => {
