@@ -1,6 +1,10 @@
-const numMotherShips = document.getElementById("motherShipInput");
-const numAttackShips = document.getElementById("attackShipInput");
-const numDefenseShips = document.getElementById("defenceShipInput");
+// let mummyships = document.getElementById("defenceShipInput").value;
+// const requestedNumOfMotherShips = document.getElementById("motherShipInput");
+
+// const numMotherShips = requestedNumOfMotherShips; // document.getElementById("motherShipInput").value;
+const numAttackShips = 5;
+const numDefenseShips = 5;
+const numMotherShips = 1;
 
 const totalShips = numAttackShips + numDefenseShips + numMotherShips;
 const ships = [];
@@ -19,11 +23,15 @@ class Ship {
   die() {
     this.hp = 0;
   }
+
+  reset() {
+    this.hp = this.hp;
+  }
 }
 for (let index = 0; index < totalShips; index++) {
   let newShip;
   if (index < numMotherShips) {
-    newShip = new Ship("MotherShip", 1, 25);
+    newShip = new Ship("MotherShip", 100, 5);
   } else if (index <= numAttackShips) {
     newShip = new Ship("AttackShip", 60, 15);
   } else if (index <= totalShips) {
@@ -34,7 +42,7 @@ for (let index = 0; index < totalShips; index++) {
 const updateHtml = () => {
   shipsSection.innerHTML = "";
   ships.forEach(ship => {
-    shipsSection.innerHTML += `<p>${ship.name}: ${ship.hp}</p>`;
+    shipsSection.innerHTML += `<div>${ship.name}: ${ship.hp}</div>`;
   });
 };
 const endGame = () => {
@@ -51,5 +59,22 @@ const dealDamage = () => {
   }
   updateHtml();
 };
-document.querySelector("button").addEventListener("click", dealDamage);
+
+const restartGame = () => {
+  for (let index = 0; index < totalShips; index++) {
+    let newShip;
+    if (index < numMotherShips) {
+      newShip = new Ship("MotherShip", 100, 5);
+    } else if (index <= numAttackShips) {
+      newShip = new Ship("AttackShip", 60, 15);
+    } else if (index <= totalShips) {
+      newShip = new Ship("DefenseShip", 40, 10);
+    }
+    ships.push(newShip);
+  }
+};
+
+document.querySelector(".fire").addEventListener("click", dealDamage);
+document.querySelector(".restart").addEventListener("click", restartGame);
+
 updateHtml();
