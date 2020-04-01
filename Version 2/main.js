@@ -1,14 +1,3 @@
-// let mummyships = document.getElementById("defenceShipInput").value;
-// const requestedNumOfMotherShips = document.getElementById("motherShipInput");
-
-// const numMotherShips = requestedNumOfMotherShips; // document.getElementById("motherShipInput").value;
-const numAttackShips = 5;
-const numDefenseShips = 5;
-const numMotherShips = 1;
-
-const totalShips = numAttackShips + numDefenseShips + numMotherShips;
-const ships = [];
-
 const shipsSection = document.getElementById("ships");
 
 class Ship {
@@ -23,31 +12,51 @@ class Ship {
   die() {
     this.hp = 0;
   }
+  // reset() {
+  //   this.hp = this.hp;
+  // }
+}
 
-  reset() {
-    this.hp = this.hp;
+let ships = [];
+
+const createGame = () => { 
+  ships = [];
+  const mummyships = parseInt(document.getElementById("motherShipInput").value)
+  const defShips = parseInt(document.getElementById("defenceShipInput").value)
+  const attShips = parseInt(document.getElementById("attackShipInput").value)
+  
+  const numAttackShips = attShips;
+  const numDefenseShips = defShips;
+  const numMotherShips = mummyships;
+
+  const totalShips = numAttackShips + numDefenseShips + numMotherShips;
+
+  for (let index = 0; index < totalShips; index++) {
+    let newShip;
+    if (index < numMotherShips) {
+      newShip = new Ship("MotherShip", 100, 5);
+    } else if (index <= numAttackShips) {
+      newShip = new Ship("AttackShip", 60, 15);
+    } else if (index <= totalShips) {
+      newShip = new Ship("DefenseShip", 40, 10);
+    }
+    ships.push(newShip);
   }
+  updateHtml();
+  // console.log(ships);
 }
-for (let index = 0; index < totalShips; index++) {
-  let newShip;
-  if (index < numMotherShips) {
-    newShip = new Ship("MotherShip", 100, 5);
-  } else if (index <= numAttackShips) {
-    newShip = new Ship("AttackShip", 60, 15);
-  } else if (index <= totalShips) {
-    newShip = new Ship("DefenseShip", 40, 10);
-  }
-  ships.push(newShip);
-}
+
 const updateHtml = () => {
   shipsSection.innerHTML = "";
   ships.forEach(ship => {
     shipsSection.innerHTML += `<div>${ship.name}: ${ship.hp}</div>`;
   });
 };
+
 const endGame = () => {
   ships.forEach(ship => ship.die());
 };
+
 const dealDamage = () => {
   const randomIndex = Math.floor(Math.random() * ships.length);
   const randomShip = ships[randomIndex];
@@ -60,21 +69,4 @@ const dealDamage = () => {
   updateHtml();
 };
 
-const restartGame = () => {
-  for (let index = 0; index < totalShips; index++) {
-    let newShip;
-    if (index < numMotherShips) {
-      newShip = new Ship("MotherShip", 100, 5);
-    } else if (index <= numAttackShips) {
-      newShip = new Ship("AttackShip", 60, 15);
-    } else if (index <= totalShips) {
-      newShip = new Ship("DefenseShip", 40, 10);
-    }
-    ships.push(newShip);
-  }
-};
-
 document.querySelector(".fire").addEventListener("click", dealDamage);
-document.querySelector(".restart").addEventListener("click", restartGame);
-
-updateHtml();

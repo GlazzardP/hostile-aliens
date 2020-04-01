@@ -9,16 +9,15 @@
     <script src="main.js" async defer></script>
   </head>
   <body>
-    <!-- <form action=""> -->
-    <!-- <input type="text" placeholder="mother" id="motherShipInput" />
-      <input type="text" placeholder="defence" id="defenceShipInput" />
-      <input type="text" placeholder="attack" id="attackShipInput" /> -->
-    <!-- <input type="submit" name="" id="" /> -->
-    <!-- </form> -->
+    <input type="text" placeholder="mother" id="motherShipInput" value="1"/>
+    <input type="text" placeholder="defence" id="defenceShipInput" value="5"/>
+    <input type="text" placeholder="attack" id="attackShipInput" value="8"/>
+    <input type="submit" name="" id="" onclick="createGame()" />
+  
     <section id="ships"></section>
     <section>
       <button class="fire">Fire</button>
-      <button class="restart">Restart</button>
+      <button onclick="createGame()">Restart</button>
     </section>
   </body>
 </html>
