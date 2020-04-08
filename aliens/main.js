@@ -1,10 +1,21 @@
+const shot = document.getElementById("shot"); 
+const explosion = new Audio("../435415__v-ktor__explosion10.wav")
+
+
+const playAudio = () => { 
+  shot.play()
+  shot.volume = 0.5;
+
+}
+
 const shipsSection = document.getElementById("ships");
 
 class Ship {
-  constructor(name, hp, damgePoints) {
+  constructor(name, hp, damgePoints, image) {
     this.name = name;
     this.hp = hp;
     this.damgePoints = damgePoints;
+    this.image = image;
   }
   takeHit() {
     this.hp = this.hp - this.damgePoints;
@@ -12,9 +23,6 @@ class Ship {
   die() {
     this.hp = 0;
   }
-  // reset() {
-  //   this.hp = this.hp;
-  // }
 }
 
 let ships = [];
@@ -34,27 +42,34 @@ const createGame = () => {
   for (let index = 0; index < totalShips; index++) {
     let newShip;
     if (index < numMotherShips) {
-      newShip = new Ship("MotherShip", 100, 5);
+      newShip = new Ship("MotherShip", 1, 15, "./assets/images/motherShip.png");
     } else if (index <= numAttackShips) {
-      newShip = new Ship("AttackShip", 60, 15);
+      newShip = new Ship("AttackShip", 60, 15), "./assets/images/attShip.png";
     } else if (index <= totalShips) {
-      newShip = new Ship("DefenseShip", 40, 10);
+      newShip = new Ship("DefenseShip", 40, 10, "./assets/images/defShip.jpg");
     }
     ships.push(newShip);
   }
   updateHtml();
-  // console.log(ships);
 }
+
 
 const updateHtml = () => {
   shipsSection.innerHTML = "";
   ships.forEach(ship => {
-    shipsSection.innerHTML += `<div>${ship.name}: ${ship.hp}</div>`;
+    shipsSection.innerHTML += 
+    `<div>       
+      <img src=${ship.image} />
+      <p>${ship.name}</p> 
+      <p>${ship.hp}</p>
+    </div>`;
   });
 };
 
 const endGame = () => {
   ships.forEach(ship => ship.die());
+  ships.splice(0,ships.length)
+  toggleHiddenClass;
 };
 
 const dealDamage = () => {
@@ -62,6 +77,8 @@ const dealDamage = () => {
   const randomShip = ships[randomIndex];
   randomShip.takeHit();
   if (randomShip.hp <= 0 && randomShip.name === "MotherShip") {
+    explosion.volume = 0.5;
+    explosion.play();
     endGame();
   } else if (randomShip.hp <= 0) {
     ships.splice(randomIndex, 1);
@@ -70,3 +87,14 @@ const dealDamage = () => {
 };
 
 document.querySelector(".fire").addEventListener("click", dealDamage);
+
+
+// const toggleHiddenClass = id => {
+//   const sectionIds = ["independance"];
+//   sectionIds.forEach(el =>
+//     document.getElementById(el).classList.remove("hide")
+//   );
+//   sectionIds.forEach(el =>
+//     el === id ? document.getElementById(el).classList.add("show") : null
+//   );
+// };
