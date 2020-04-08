@@ -42,11 +42,11 @@ const createGame = () => {
   for (let index = 0; index < totalShips; index++) {
     let newShip;
     if (index < numMotherShips) {
-      newShip = new Ship("MotherShip", 1, 15, "./assets/images/motherShip.png");
+      newShip = new Ship("MotherShip", 100, 15, "./assets/images/585f9891cb11b227491c3599.png");
     } else if (index <= numAttackShips) {
-      newShip = new Ship("AttackShip", 60, 15), "./assets/images/attShip.png";
+      newShip = new Ship("AttackShip", 60, 15, "./assets/images/5ba661c3bede2105e7aaeef1.png");
     } else if (index <= totalShips) {
-      newShip = new Ship("DefenseShip", 40, 10, "./assets/images/defShip.jpg");
+      newShip = new Ship("DefenseShip", 40, 10, "./assets/images/5ba661a8bede2105e7aaeeee.png");
     }
     ships.push(newShip);
   }

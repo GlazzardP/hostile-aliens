@@ -1,5 +1,5 @@
 body {
-background-image: url(./assets/images/jeremy-perkins-uhjiu8FjnsQ-unsplash.jpg);
+background-image: url(./assets/images/2015-07-06-1436143755-283629-SaltFlat1.jpg);
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
@@ -8,6 +8,11 @@ width: 100vw;
 }
 #ships {
   display: flex;
+}
+
+#buttons { 
+  display: flex;
+  justify-content: center;
 }
 
 section  {
@@ -19,35 +24,35 @@ section  {
   }
 
   #startGame { 
-    background-color: red;
-    height: 200px; 
-    width: 200px; 
+    // background-color: red;
+    height: 30px; 
+    width: 300px; 
   }
 }
 
 #form { 
   width: 300px;
-  left: 50%;
-  top: 50%;
+  bottom: 0;
+  position: absolute;
   display: flex;
   flex-direction: column;
-  border: solid red 2px;;
 }
 
 div {
   margin: 10px;
-  border: solid red 2px;
+  // border: solid red 2px;
   height: 100px;
   display: flex;
   flex-direction: column;
+  text-align: center;
 
   img { 
     height: 80%;
   }
 
-  p { 
-    color: whitesmoke;
-  }
+  // p { 
+  //   color: whitesmoke;
+  // }
 }
 
 .hidden { 
