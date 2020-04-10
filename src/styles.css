@@ -18,7 +18,7 @@ body {
 #buttons {
   position: absolute;
   bottom: 0;
-  margin: 0 auto 100px auto;
+  margin: 0 auto 100px 550px;
 }
 
 #buttons #form {
@@ -46,7 +46,10 @@ body {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  border: solid black 2px;
+}
+
+#buttons div button {
+  margin-left: 10px;
 }
 
 #buttons button {
