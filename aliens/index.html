@@ -11,21 +11,23 @@
     <script src="main.js" async defer></script>
   </head>
   <body>
-    <section id="form">
-      <input type="text" placeholder="mother" id="motherShipInput" value="2"/>
-        <input type="text" placeholder="defence" id="defenceShipInput" value="2"/>
-        <input type="text" placeholder="attack" id="attackShipInput" value="2"/>
-        <input type="submit" name="" id="startGame" onclick="createGame()" />
-    </section>
+
   
     <section id="ships"></section>
 
     <section id="buttons">
-
+      <div>
+        <button class="fire" onclick="playAudio()">Fire</button>
+        <button onclick="createGame()">Restart</button>
+      </div>
+      <section id="form">
+        <input type="text" placeholder="mother" id="motherShipInput" value="1"/>
+          <input type="text" placeholder="defence" id="defenceShipInput" value="5"/>
+          <input type="text" placeholder="attack" id="attackShipInput" value="8"/>
+          <button type="submit" name="" id="startGame" onclick="createGame()">Start Game</button>
+      </section>
       <audio id="shot" src="../aliens/assets/sounds/344310__musiclegends__laser-shoot.wav" type="audio/wav"></audio>
 
-      <button class="fire" onclick="playAudio()">Fire</button>
-      <button onclick="createGame()">Restart</button>
     </section>
 
     <section>

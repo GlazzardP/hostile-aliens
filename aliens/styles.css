@@ -11,32 +11,17 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 #buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-section button {
-  height: 50px;
-  width: 100px;
-  border: solid salmon 5px;
-}
-
-section #startGame {
-  height: 30px;
-  width: 300px;
-}
-
-#form {
-  width: 300px;
-  bottom: 0;
   position: absolute;
+  bottom: 0;
+  margin: 0 auto 100px auto;
+}
+
+#buttons #form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -44,6 +29,35 @@ section #startGame {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+#buttons #form input {
+  margin: 5px 0;
+}
+
+#buttons div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: solid black 2px;
+}
+
+#buttons button {
+  height: 50px;
+  width: 100px;
+  border: solid salmon 5px;
+}
+
+#buttons #startGame {
+  height: 30px;
+  width: 250px;
 }
 
 div {
@@ -57,19 +71,10 @@ div {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
+  margin-bottom: 50px;
 }
 
 div img {
   height: 80%;
-}
-
-.hidden {
-  display: none;
-}
-
-.show {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -42,11 +42,11 @@ const createGame = () => {
   for (let index = 0; index < totalShips; index++) {
     let newShip;
     if (index < numMotherShips) {
-      newShip = new Ship("MotherShip", 100, 15, "./assets/images/585f9891cb11b227491c3599.png");
+      newShip = new Ship("Mother Ship", 1, 15, "./assets/images/585f9891cb11b227491c3599.png");
     } else if (index <= numAttackShips) {
-      newShip = new Ship("AttackShip", 60, 15, "./assets/images/5ba661c3bede2105e7aaeef1.png");
+      newShip = new Ship("Attack Ship", 60, 15, "./assets/images/5ba661c3bede2105e7aaeef1.png");
     } else if (index <= totalShips) {
-      newShip = new Ship("DefenseShip", 40, 10, "./assets/images/5ba661a8bede2105e7aaeeee.png");
+      newShip = new Ship("Defense Ship", 40, 10, "./assets/images/5ba661a8bede2105e7aaeeee.png");
     }
     ships.push(newShip);
   }
@@ -77,8 +77,8 @@ const dealDamage = () => {
   const randomShip = ships[randomIndex];
   randomShip.takeHit();
   if (randomShip.hp <= 0 && randomShip.name === "MotherShip") {
-    explosion.volume = 0.5;
-    explosion.play();
+    // explosion.volume = 0.7;
+    // explosion.play();
     endGame();
   } else if (randomShip.hp <= 0) {
     ships.splice(randomIndex, 1);
