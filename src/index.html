@@ -3,37 +3,63 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./styles.css" />
     <title>Independance Day</title>
     <script src="main.js" async defer></script>
   </head>
-  <body>
-
-  
+  <body onload="createGame()">
     <section id="ships"></section>
 
     <section id="buttons">
       <div>
         <button class="fire" onclick="playAudio()">Fire</button>
-        <button onclick="createGame()">Restart</button>
+        <!-- <button onclick="createGame()">Restart</button> -->
       </div>
       <section id="form">
-        <input type="text" placeholder="mother" id="motherShipInput" value="1"/>
-          <input type="text" placeholder="defence" id="defenceShipInput" value="5"/>
-          <input type="text" placeholder="attack" id="attackShipInput" value="8"/>
-          <button type="submit" name="" id="startGame" onclick="createGame()">Start Game</button>
+        <input
+          type="text"
+          placeholder="mother"
+          id="motherShipInput"
+          value="1"
+        />
+        <input
+          type="text"
+          placeholder="defence"
+          id="defenceShipInput"
+          value="5"
+        />
+        <input
+          type="text"
+          placeholder="attack"
+          id="attackShipInput"
+          value="8"
+        />
+        <button type="submit" name="" id="startGame" onclick="createGame()">
+          Start Game
+        </button>
       </section>
-      <audio id="shot" src="../aliens/assets/sounds/344310__musiclegends__laser-shoot.wav" type="audio/wav"></audio>
-
+      <audio
+        id="shot"
+        src="../aliens/assets/sounds/344310__musiclegends__laser-shoot.wav"
+        type="audio/wav"
+      ></audio>
     </section>
 
     <section>
       <span class="fas fa-volume-up"></span>
       <span class="fas fa-volume-mute"></span>
-      <img src="../indepdenace.jpg" id="independance" alt="" class="hidden">
+      <img src="../indepdenace.jpg" id="independance" alt="" class="hidden" />
     </section>
   </body>
 </html>

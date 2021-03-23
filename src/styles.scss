@@ -1,10 +1,14 @@
+* {
+  font-family: "Lato", sans-serif;
+}
+
 body {
-background-image: url(./assets/images/2015-07-06-1436143755-283629-SaltFlat1.jpg);
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-height: 100vh;
-width: 100vw;
+  background-image: url(./assets/images/2015-07-06-1436143755-283629-SaltFlat1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
 }
 
 #ships {
@@ -12,8 +16,7 @@ width: 100vw;
   flex-wrap: wrap;
 }
 
-
-#buttons  {
+#buttons {
   position: absolute;
   bottom: 0;
   margin: 0 auto 100px 550px;
@@ -22,31 +25,36 @@ width: 100vw;
     display: flex;
     flex-direction: column;
 
-    input { 
+    input {
       margin: 5px 0;
     }
   }
 
-  div { 
+  div {
     display: flex;
     flex-direction: row;
     height: fit-content;
     // border: solid black 2px;
-     button { 
-       margin-left: 10px;;
-     }
+    button {
+      margin: auto;
+      width: 100%;
+    }
   }
 
-  button { 
-    height: 50px; 
-    width: 100px;;
+  button {
+    height: 50px;
+    width: 100px;
     border: solid salmon 5px;
   }
 
-  #startGame { 
+  button:hover {
+    background-color: rgb(150, 82, 82);
+  }
+
+  #startGame {
     // background-color: red;
-    height: 30px; 
-    width: 250px; 
+    height: 30px;
+    width: 250px;
   }
 }
 
@@ -58,7 +66,7 @@ div {
   text-align: center;
   margin-bottom: 50px;
 
-  img { 
+  img {
     height: 80%;
   }
 }

@@ -1,12 +1,10 @@
-const shot = document.getElementById("shot"); 
-const explosion = new Audio("../435415__v-ktor__explosion10.wav")
+const shot = document.getElementById("shot");
+const explosion = new Audio("../435415__v-ktor__explosion10.wav");
 
-
-const playAudio = () => { 
-  shot.play()
+const playAudio = () => {
+  shot.play();
   shot.volume = 0.5;
-
-}
+};
 
 const shipsSection = document.getElementById("ships");
 
@@ -27,12 +25,12 @@ class Ship {
 
 let ships = [];
 
-const createGame = () => { 
+const createGame = () => {
   ships = [];
-  const mummyships = parseInt(document.getElementById("motherShipInput").value)
-  const defShips = parseInt(document.getElementById("defenceShipInput").value)
-  const attShips = parseInt(document.getElementById("attackShipInput").value)
-  
+  const mummyships = parseInt(document.getElementById("motherShipInput").value);
+  const defShips = parseInt(document.getElementById("defenceShipInput").value);
+  const attShips = parseInt(document.getElementById("attackShipInput").value);
+
   const numAttackShips = attShips;
   const numDefenseShips = defShips;
   const numMotherShips = mummyships;
@@ -42,23 +40,36 @@ const createGame = () => {
   for (let index = 0; index < totalShips; index++) {
     let newShip;
     if (index < numMotherShips) {
-      newShip = new Ship("Mother Ship", 100, 15, "./assets/images/585f9891cb11b227491c3599.png");
+      newShip = new Ship(
+        "Mother Ship",
+        100,
+        15,
+        "./assets/images/585f9891cb11b227491c3599.png"
+      );
     } else if (index <= numAttackShips) {
-      newShip = new Ship("Attack Ship", 60, 15, "./assets/images/5ba661c3bede2105e7aaeef1.png");
+      newShip = new Ship(
+        "Attack Ship",
+        60,
+        15,
+        "./assets/images/5ba661c3bede2105e7aaeef1.png"
+      );
     } else if (index <= totalShips) {
-      newShip = new Ship("Defense Ship", 40, 10, "./assets/images/5ba661a8bede2105e7aaeeee.png");
+      newShip = new Ship(
+        "Defense Ship",
+        40,
+        10,
+        "./assets/images/5ba661a8bede2105e7aaeeee.png"
+      );
     }
     ships.push(newShip);
   }
   updateHtml();
-}
-
+};
 
 const updateHtml = () => {
   shipsSection.innerHTML = "";
-  ships.forEach(ship => {
-    shipsSection.innerHTML += 
-    `<div>       
+  ships.forEach((ship) => {
+    shipsSection.innerHTML += `<div>       
       <img src=${ship.image} />
       <p>${ship.name}</p> 
       <p>${ship.hp}</p>
@@ -67,9 +78,9 @@ const updateHtml = () => {
 };
 
 const endGame = () => {
-  ships.forEach(ship => ship.die());
-  ships.splice(0,ships.length)
-  toggleHiddenClass;
+  ships.forEach((ship) => ship.die());
+  ships.splice(0, ships.length);
+  // toggleHiddenClass;
 };
 
 const dealDamage = () => {
@@ -87,7 +98,6 @@ const dealDamage = () => {
 };
 
 document.querySelector(".fire").addEventListener("click", dealDamage);
-
 
 // const toggleHiddenClass = id => {
 //   const sectionIds = ["independance"];

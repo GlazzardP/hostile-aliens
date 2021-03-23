@@ -1,3 +1,7 @@
+* {
+  font-family: "Lato", sans-serif;
+}
+
 body {
   background-image: url(./assets/images/2015-07-06-1436143755-283629-SaltFlat1.jpg);
   background-position: center;
@@ -49,13 +53,18 @@ body {
 }
 
 #buttons div button {
-  margin-left: 10px;
+  margin: auto;
+  width: 100%;
 }
 
 #buttons button {
   height: 50px;
   width: 100px;
   border: solid salmon 5px;
+}
+
+#buttons button:hover {
+  background-color: #965252;
 }
 
 #buttons #startGame {
